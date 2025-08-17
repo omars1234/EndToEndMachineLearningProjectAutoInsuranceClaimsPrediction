@@ -28,8 +28,7 @@ class DataTraining:
        
         preprocessed_data=preprocessor.transform(x)
                         
-
-        X_train, X_val, y_train, y_val = train_test_split(preprocessed_data, y,
+        X_train, X_test, y_train, y_test = train_test_split(preprocessed_data, y,
                                                           test_size=self.data_training_config.test_split_ratio,
                                                           random_state=self.data_training_config.random_state)
         
@@ -38,5 +37,4 @@ class DataTraining:
         model=xgb.XGBClassifier()
         model.fit(resampled_x,resampled_y)
         joblib.dump(model, os.path.join(self.data_training_config.model_dir,MODEL_DIR_NAME))
-        return resampled_x,resampled_y,X_train, X_val, y_train, y_val
-    
+        return resampled_x,resampled_y,X_train, X_test, y_train, y_test

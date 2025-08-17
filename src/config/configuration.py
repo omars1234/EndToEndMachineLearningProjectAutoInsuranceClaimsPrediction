@@ -4,7 +4,8 @@ from constants.main import *
 from src.entity.config_entity import (DataIngestionConfig,
                                       DataCleaningConfig,
                                       DataTransformationConfig,
-                                      DataTrainingConfig)
+                                      DataTrainingConfig,
+                                      ModelEvaluationConfig)
 
 
 
@@ -40,4 +41,13 @@ class DataTrainingManager:
         self.data_training_config=data_training_config
 
     def create_directories(self):
-        os.makedirs(self.data_training_config.model_dir,exist_ok=True)        
+        os.makedirs(self.data_training_config.model_dir,exist_ok=True)   
+
+
+
+class ModelEvaluationManager:
+    def __init__(self,model_evaluation_config:ModelEvaluationConfig=ModelEvaluationConfig()):
+        self.model_evaluation_config=model_evaluation_config
+
+    def create_directories(self):
+        os.makedirs(self.model_evaluation_config.evaluation_file_dir,exist_ok=True)              
