@@ -211,5 +211,4 @@ __marimo__/
 .EnvAuoInsuranceAnalysis
 
 # MongoDB_settings
-MongoDB_Constants/
-
+MongoDBConfig/
