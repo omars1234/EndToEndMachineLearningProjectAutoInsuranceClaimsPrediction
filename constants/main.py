@@ -44,8 +44,8 @@ Data Training related constant
 """
 MODEL_DIR='saved_model'
 MODEL_DIR_NAME='model.joblib'
-TARGER_FEATURE :str = "Price"
-TEST_SPLIT_RATIO: float = 0.2
+TARGER_FEATURE :str = "Claim_recorded"
+TEST_SPLIT_RATIO: float = 0.3
 RANDOM_STATE : int = 42
 
 

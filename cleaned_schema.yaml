@@ -22,6 +22,16 @@ numerical_columns:
 
 categorical_columns:
   - Veh_body
-  - Genderender
+  - Gender
   - Area
+  - Veh_age
+  - Age_category
+
+
+oh_columns:
+  - Veh_body
+  - Gender
+  - Area
+  - Veh_age
+  - Age_category
 

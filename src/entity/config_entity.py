@@ -37,3 +37,11 @@ class DataCleaningConfig:
     cleaned_data_ingested_dir:str=os.path.join(training_pipeline_config.artifact_dir,CLEANED_DATA_INGESTED_DIR_NAME)
     schema_file_path_dir:str=SCHEMA_FILE_PATH
         
+
+
+@dataclass
+class DataTransformationConfig:
+
+    cleaned_data_file_dir: Path=os.path.join(training_pipeline_config.artifact_dir,CLEANED_DATA_INGESTED_DIR_NAME,CLEANED_DATA_FILE_DIR_NAME)
+    preproccesor_transformation_object:Path=PREPROCCESOR_TRANSFORMATION_OBJECt_DIR
+    schema_cleaned_file_path_dir:str=SCHEMA_CLAENED_FILE_PATH  
