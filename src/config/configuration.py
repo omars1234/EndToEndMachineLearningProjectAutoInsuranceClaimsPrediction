@@ -3,7 +3,8 @@ import os
 from constants.main import *
 from src.entity.config_entity import (DataIngestionConfig,
                                       DataCleaningConfig,
-                                      DataTransformationConfig)
+                                      DataTransformationConfig,
+                                      DataTrainingConfig)
 
 
 
@@ -31,3 +32,12 @@ class DataTransformationManager:
 
     def create_directories(self):
         os.makedirs(self.data_transformation_config.preproccesor_transformation_object,exist_ok=True)
+
+
+
+class DataTrainingManager:
+    def __init__(self,data_training_config:DataTrainingConfig=DataTrainingConfig()):
+        self.data_training_config=data_training_config
+
+    def create_directories(self):
+        os.makedirs(self.data_training_config.model_dir,exist_ok=True)        

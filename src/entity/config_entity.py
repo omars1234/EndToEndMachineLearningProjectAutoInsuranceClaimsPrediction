@@ -45,3 +45,15 @@ class DataTransformationConfig:
     cleaned_data_file_dir: Path=os.path.join(training_pipeline_config.artifact_dir,CLEANED_DATA_INGESTED_DIR_NAME,CLEANED_DATA_FILE_DIR_NAME)
     preproccesor_transformation_object:Path=PREPROCCESOR_TRANSFORMATION_OBJECt_DIR
     schema_cleaned_file_path_dir:str=SCHEMA_CLAENED_FILE_PATH  
+
+
+
+@dataclass
+class DataTrainingConfig:
+
+    cleaned_data_file_dir: Path=os.path.join(training_pipeline_config.artifact_dir,CLEANED_DATA_INGESTED_DIR_NAME,CLEANED_DATA_FILE_DIR_NAME)
+    model_dir:Path=MODEL_DIR
+    target_feature:'str'=TARGER_FEATURE
+    preprocessor_dir:'str'=os.path.join(PREPROCCESOR_TRANSFORMATION_OBJECt_DIR,PREPROCCESOR_TRANSFORMATION_OBJECt_DIR_NAME)
+    test_split_ratio:float=TEST_SPLIT_RATIO
+    random_state:int=RANDOM_STATE 
