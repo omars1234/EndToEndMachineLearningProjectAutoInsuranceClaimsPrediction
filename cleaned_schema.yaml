@@ -1,0 +1,27 @@
+columns:
+  - Veh_value : float
+  - Exposure : float
+  - Claim_recorded : int
+  - Number_of_recorded_claims : int
+  - Claims_cost : float
+  - Veh_body : category
+  - Veh_age : int
+  - Gender : category
+  - Area : category
+  - Age_category : int
+  
+
+numerical_columns:
+  - Veh_value 
+  - Exposure 
+  - Number_of_recorded_claims 
+  - Claims_cost
+  - Claim_recorded
+  - Veh_age
+  - Age_category
+
+categorical_columns:
+  - Veh_body
+  - Genderender
+  - Area
+

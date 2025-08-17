@@ -29,3 +29,11 @@ class DataIngestionConfig:
     CONNECTION_URL:str=CONNECTION_URL
     data_artifacts_dir:str=ARTIFACT_DIR
     data_ingested_dir:str=os.path.join(training_pipeline_config.artifact_dir,DATA_INGESTED_DIR_NAME)
+
+
+@dataclass
+class DataCleaningConfig:
+    raw_data_file_path_dir :str=os.path.join(training_pipeline_config.artifact_dir,DATA_INGESTED_DIR_NAME,RAW_DATA_FILE_PATH_DIR_NAME)
+    cleaned_data_ingested_dir:str=os.path.join(training_pipeline_config.artifact_dir,CLEANED_DATA_INGESTED_DIR_NAME)
+    schema_file_path_dir:str=SCHEMA_FILE_PATH
+        

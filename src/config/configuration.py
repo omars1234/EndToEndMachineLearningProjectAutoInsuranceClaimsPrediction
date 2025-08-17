@@ -1,7 +1,8 @@
 
 import os
 from constants.main import *
-from src.entity.config_entity import (DataIngestionConfig)
+from src.entity.config_entity import (DataIngestionConfig,
+                                      DataCleaningConfig)
 
 
 
@@ -12,3 +13,12 @@ class DataIngestionManager:
     def create_directories(self):
         os.makedirs(self.data_ingestion_config.data_artifacts_dir,exist_ok=True)
         os.makedirs(self.data_ingestion_config.data_ingested_dir,exist_ok=True) 
+
+
+
+class DataCleaningManager:
+    def __init__(self,cleaned_data_ingested_config:DataCleaningConfig=DataCleaningConfig()):
+        self.cleaned_data_ingested_config=cleaned_data_ingested_config
+
+    def create_directories(self):
+        os.makedirs(self.cleaned_data_ingested_config.cleaned_data_ingested_dir,exist_ok=True) 

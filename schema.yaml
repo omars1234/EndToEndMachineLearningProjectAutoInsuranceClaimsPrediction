@@ -1,0 +1,34 @@
+columns:
+  - veh_value : float
+  - exposure : float
+  - clm : int
+  - numclaims : int
+  - claimcst0 : float
+  - veh_body : category
+  - veh_age : int
+  - gender : category
+  - area : category
+  - agecat : int
+  - X_OBSTAT_ : object
+  
+
+numerical_columns:
+  - veh_value 
+  - exposure 
+  - numclaims 
+  - claimcst0
+  - clm
+  - veh_age
+  - agecat
+
+categorical_columns:
+  - veh_body
+  - gender
+  - area
+  - X_OBSTAT_
+
+cols_to_drop:
+  - X_OBSTAT_
+
+col_veh_value_validate:
+  - veh_value
