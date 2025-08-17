@@ -20,12 +20,10 @@ class DataCleaning:
     def clean_df(self):
 
         df=pd.read_csv(self.data_cleaning_config.raw_data_file_path_dir)
-        
-        columns_veh_value_validate = self.schema_config["col_veh_value_validate"]
+
         columns_to_drop=self.schema_config["cols_to_drop"]
         
-        
-
+        df=df.drop_duplicates()
         df=df.drop(columns_to_drop,axis=1)
         df=df[df["veh_value"] != 0]
         df["veh_value"]=df["veh_value"]*10000
