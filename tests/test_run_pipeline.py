@@ -5,6 +5,7 @@ from src.pipeline.data_training import DataTrainingPipeline
 from src.pipeline.model_evaluation import ModelEvaluationPipeline
 
 
+
 def test_DataIngestionTrainingPipeline():
         pipeline = DataIngestionTrainingPipeline()
         assert pipeline is not None  # simple existence check

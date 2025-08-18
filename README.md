@@ -38,6 +38,20 @@ pip install -r requirements.txt
 *entity --> congfig --> components --> pipeleine --> run_pipeline*
 
 
+* *add and run data ingestion part*  
+* *add and run data cleaning part*  
+* *add and run data transformation part*  
+* *add and run data training part*  
+* *add and run model evaluation part*   
+## *create GitActions :(ci/cd)*
+
+*to check if the run_pipeline.py file run perfectly*  
+
+ --> python app.py  
+* *add data prediction part*  
+
+
+![log](MLOPs_AutoInsuranceClaimsPrediction_Project.jpg)
 
 
 
