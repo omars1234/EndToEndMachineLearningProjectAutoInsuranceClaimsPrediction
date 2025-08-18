@@ -24,14 +24,13 @@ categorical_columns:
   - Veh_body
   - Gender
   - Area
-  - Veh_age
-  - Age_category
 
 
 oh_columns:
+  - Number_of_recorded_claims
   - Veh_body
+  - Veh_age
   - Gender
   - Area
-  - Veh_age
   - Age_category
 
