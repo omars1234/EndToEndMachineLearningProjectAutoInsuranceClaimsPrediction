@@ -31,11 +31,11 @@ jobs:
         run: echo "My DB_NAME is ${{secrets.DB_NAME}}"   
 
       - name: read COLLECTION_NAME
-        run: echo "My DB_NAME is ${{secrets.COLLECTION_NAME}}" 
+        run: echo "My COLLECTION_NAME is ${{secrets.COLLECTION_NAME}}" 
 
 
       - name: read CONNECTION_URL
-        run: echo "My DB_NAME is ${{secrets.CONNECTION_URL}}"           
+        run: echo "My CONNECTION_URL is ${{secrets.CONNECTION_URL}}"        
 
 
       - name: Test with pytest
