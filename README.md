@@ -51,6 +51,9 @@ pip install -r requirements.txt
 * *add data prediction part*  
 
 
+## *WorkFlow Visualization*
+
+
 ![log](MLOPs_AutoInsuranceClaimsPrediction_Project.jpg)
 
 
