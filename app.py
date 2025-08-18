@@ -1,17 +1,16 @@
-from flask import Flask,render_template,jsonify,Request
-import numpy as np
+from flask import Flask,render_template,request
 from src.pipeline.data_prediction import PredictionPipeline
 import os
 import pandas as pd
-import joblib
-from requests import request
+
+#from requests import request
 
 
 app=Flask(__name__)
 
 @app.route('/',methods=['GET'])
 def homepage():
-    return render_template('index.html') 
+    return render_template('index2.html') 
 
 
 @app.route('/train',methods=["GET"])
@@ -26,15 +25,17 @@ def index():
     if request.method == 'POST':
         try:
             #  reading the inputs given by the user
-            Veh_value=float(request.form['Veh_value'])
-            Exposure=float(request.form['Exposure'])
-            Number_of_recorded_claims=str(request.form['Number_of_recorded_claims'])
-            Claims_cost=float(request.form['Claims_cost'])
-            Veh_body=str(request.form['Veh_body'])
-            Veh_age=str(request.form['Veh_age'])
-            Gender=str(request.form['Gender'])
-            Area=str(request.form['Area'])
-            Age_category=str(request.form['Age_category'])
+            data = request.get_json()  # <-- JSON from fetch
+
+            Veh_value = float(data['Veh_value'])
+            Exposure = float(data['Exposure'])
+            Number_of_recorded_claims = int(data['Number_of_recorded_claims'])
+            Claims_cost = float(data['Claims_cost'])
+            Veh_body = str(data['Veh_body'])
+            Veh_age = int(data['Veh_age'])
+            Gender = str(data['Gender'])
+            Area = str(data['Area'])
+            Age_category = int(data['Age_category'])
 
             
             input_data = pd.DataFrame({
@@ -53,14 +54,13 @@ def index():
 
             obj = PredictionPipeline()
             predict = obj.predict(input_data)
-
             
-            return render_template('results.html', prediction = predict)
+            return {"prediction": str(predict), "details": None}
     
 
         except Exception as e:
-            print('The Exception message is: ',e)
-            return 'something is wrong'
+            print('Exception:', e)
+            return {"error": str(e)}, 400
         
     else:
         return render_template('results.html')        

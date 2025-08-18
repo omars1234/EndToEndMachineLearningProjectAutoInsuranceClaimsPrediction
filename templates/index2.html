@@ -84,136 +84,122 @@ This file posts JSON to /predict via fetch — adapt the endpoint to your Flask 
         <div class="chip">Flask-friendly</div>
       </div>
 
-      <form id="predict-form" class="row" autocomplete="off">
+      <form id="predict-form" class="row" autocomplete="off">      
     
-        <!-- Categorical inputs -->
+        
         <div class="field">
-          <label for="Region_code">Region code</label>
-          <select id="Region_code" name="Region_code">
-            <option value="">-- choose --</option>
-            <option value="2600">2600</option>
-            <option value="2601">2906</option>
-            <option value="2602">2906</option>
-            <option value="2603">2906</option>
-            <option value="2604">2906</option>
-            <option value="2605">2906</option>
-            <option value="2606">2906</option>
-            <option value="2607">2906</option>
-            <option value="2609">2906</option>
-            <option value="2611">2906</option>
-            <option value="2612">2906</option>
-            <option value="2614">2906</option>
-            <option value="2615">2906</option>
-            <option value="2616">2906</option>
-            <option value="2617">2906</option>
-            <option value="2618">2906</option>
-            <option value="2620">2906</option>
-            <option value="2900">2906</option>
-            <option value="2902">2906</option>
-            <option value="2903">2906</option>
-            <option value="2904">2906</option>
-            <option value="2905">2906</option>     
-            <option value="2906">2906</option>
-            <option value="2911">2906</option>
-            <option value="2912">2906</option>
-            <option value="2913">2906</option>
-            <option value="2914">2906</option>
-          </select>
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+          <label for="Veh_value"> Veh value:</label>
+          <input type="text" name="Veh_value" id="Veh_value" class="input-text" placeholder="Veh_value" required>
+          <div class="small">Numerical — Allow decimals</div>
         </div>
 
         <div class="field">
-          <label for="Property_type">Property type</label>
-          <select id="Property_type" name="Property_type">
-            <option value="">-- choose --</option>
-            <option value="house">house</option>
-            <option value="unit">unit</option>
-          </select>
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
-        </div>
-
-
-        <div class="field">
-          <label for="Bedrooms_str">Number of Bedrooms</label>
-          <select id="Bedrooms_str" name="Bedrooms_str">
-            <option value="">-- choose --</option>
-            <option value="Without_bedrooms">Without bedrooms</option>
-            <option value="One_bedrooms">One bedrooms</option>
-            <option value="Two_bedrooms">Two bedrooms</option>
-            <option value="Three_bedrooms">Three bedrooms</option>
-            <option value="Four_bedrooms">Four bedrooms</option>
-            <option value="Five_bedrooms">Five bedrooms</option>
-          </select>
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
-        </div>
-
-
-        <div class="field">
-          <label for="Year">Year</label>
-          <select id="Year" name="Year">
-            <option value="">-- choose --</option>
-            <option value="2007">2007</option>
-            <option value="2008">2008</option>
-            <option value="2009">2009</option>
-            <option value="2010">2010</option>
-            <option value="2011">2011</option>
-            <option value="2012">2012</option>
-            <option value="2013">2013</option>
-            <option value="2014">2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-          </select>
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
-        </div>
-
-
-
-         <div class="field">
-          <label for="Month_name">Month name</label>
-          <select id="Month_name" name="Month_name">
-            <option value="">-- choose --</option>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-          </select>
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
-        </div>
-
-
-
-         <div class="field">
-          <label for="Day_name">Day name</label>
-          <select id="Day_name" name="Day_name">
-            <option value="">-- choose --</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-          </select>
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
-        </div>
-
-          <!-- Numerical inputs -->
-        <div class="field">
-          <label for="Price_per_bedrooms">Price per bedroom</label>
-          <input id="Price_per_bedrooms" name="Price_per_bedrooms" type="number" min="0.000000e+00",max="2.280000e+06", step="100" placeholder="e.g. 50000" required>
+          <label for="Exposure"> Exposure:</label>
+          <input type="text" name="Exposure" id="Exposure" class="input-text" placeholder="Exposure" required>
           <div class="small">Allow decimals </div>
-        </div>      
+        </div>
+
+
+        <div class="field">
+          <label for="Number_of_recorded_claims"> Number_of_recorded_claims:</label>
+          <select name="Number_of_recorded_claims" id="Number_of_recorded_claims">
+            <option selected="">Number of recorded claims</option>
+             <option value=0>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select>    
+          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+        </div>
+
+        <div class="field">
+          <label for="Claims_cost"> Claims cost:</label>
+          <input type="text" name="Claims_cost" id="Claims_cost" class="input-text" placeholder="Claims_cost" required>
+          <div class="small">Numerical — Allow decimals</div>
+        </div>
+
+
+        <div class="field">
+          <label for="Veh_body"> Veh body:</label>
+                        <select name="Veh_body" id="Veh_body">
+                            <option selected="">select veh_body</option>
+                            <option value='BUS'>BUS</option>
+                            <option value='CONVT'>CONVT</option>
+                            <option value='COUPE'>COUPE</option>
+                            <option value='HBACK'>HBACK</option>
+                            <option value='HDTOP'>HDTOP</option>
+                            <option value='MCARA'>MCARA</option>
+                            <option value='MIBUS'>MIBUS</option>
+                            <option value='PANVN'>PANVN</option>
+                            <option value='RDSTR'>RDSTR</option>
+                            <option value='SEDAN'>SEDAN</option>
+                            <option value='STNWG'>STNWG</option>
+                            <option value='TRUCK'>TRUCK</option>
+                            <option value='UTE'>UTE</option>
+                        </select>    
+          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+        </div>
+
+
+
+         <div class="field">
+          <label for="Veh_age"> Veh age:</label>
+                        <select name="Veh_age" id="Veh_age">
+                            <option selected="">select veh_age</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select>    
+          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+        </div>
+
+
+
+         <div class="field">
+          <label for="Gender"> Gender:</label>
+           <select name="Gender" id="Gender">
+                            <option selected="">select veh_age</option>
+                            <option value='F'>Femal</option>
+                            <option value='M'>Male</option>
+                        </select>    
+          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+        </div>
+
+
+        <div class="field">
+          <label for="Area"> Area:</label>
+                        <select name="Area" id="Area">
+                            <option selected="">select Area</option>
+                            <option value='A'>A</option>
+                            <option value='B'>B</option>
+                            <option value='C'>C</option>
+                            <option value='D'>D</option>
+                            <option value='E'>E</option>
+                            <option value='F'>F</option>
+                        </select>    
+          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+        </div>
+
+
+        <div class="field">
+          <label for="Age_category"> Age category:</label>
+                        <select name="Age_category" id="Age_category">
+                            <option selected="">select Age_category</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                        </select>  
+          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
+        </div>
+
+          
+
+
 
 
         <!-- Extra: text feature -->
@@ -235,90 +221,84 @@ This file posts JSON to /predict via fetch — adapt the endpoint to your Flask 
           
             <div class="value" id="result-value">—</div>
             <div class="small" id="result-details"></div>
-          {% endif %}
+         
         </div>
       </form>
 
     </div>
   </div>
 
-  <script>
-    const form = document.getElementById('predict-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const clearBtn = document.getElementById('clear-btn');
-    const spinner = document.getElementById('spinner');
-    const feedback = document.getElementById('feedback');
-    const resultBox = document.getElementById('result');
-    const resultValue = document.getElementById('result-value');
-    const resultDetails = document.getElementById('result-details');
+<script>
+  const form = document.getElementById('predict-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const clearBtn = document.getElementById('clear-btn');
+  const spinner = document.getElementById('spinner');
+  const feedback = document.getElementById('feedback');
+  const resultBox = document.getElementById('result');
+  const resultValue = document.getElementById('result-value');
+  const resultDetails = document.getElementById('result-details');
 
-    clearBtn.addEventListener('click', ()=>{
-      form.reset();
-      feedback.style.display='none';
-      resultBox.style.display='none';
-    });
+  clearBtn.addEventListener('click', ()=>{
+    form.reset();
+    feedback.style.display='none';
+    resultBox.style.display='none';
+  });
 
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      feedback.style.display='none';
-      resultBox.style.display='none';
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    feedback.style.display='none';
+    resultBox.style.display='none';
 
-      // Simple client-side validation for required numeric fields
-      const Region_code = document.getElementById('Region_code').value;
-      if(!Region_code){
-        showFeedback('Please enter Region_code.', 'error');
-        return;
+    // gather form data into an object
+    const data = {};
+    new FormData(form).forEach((value, key) => {
+      if(value === "") value = null;
+
+      // numeric fields from your form
+      const numericFields = ['Veh_value','Exposure','Claims_cost'];
+      if(value !== null && !isNaN(value) && value !== '' && numericFields.includes(key)){
+        value = Number(value);
       }
 
-      // gather form data into an object
-      const data = {};
-      new FormData(form).forEach((value, key) => {
-        // convert empty string to null
-        if(value === "") value = null;
-        // try to convert numeric-looking values to numbers
-        if(value !== null && !isNaN(value) && value !== ''){
-          // but don't coerce categorical that are numbers intentionally — assume numeric inputs have name matching our numeric fields
-          const numericFields = ['Region_code','Property_type','Bedrooms_str','Year','Month_name','Day_name','Price_per_bedrooms'];
-          if(numericFields.includes(key)) value = Number(value);
-        }
-        data[key] = value;
+      data[key] = value;
+    });
+
+    // show spinner
+    spinner.style.display='inline-block';
+    submitBtn.disabled = true;
+
+    try{
+      // send to Flask endpoint /predict as JSON
+      const resp = await fetch('/predict',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
       });
 
-      // show spinner
-      spinner.style.display='inline-block';
-      submitBtn.disabled = true;
-
-      try{
-        // send to Flask endpoint /predict as JSON
-        const resp = await fetch('/predict',{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify(data)
-        });
-
-        const payload = await resp.json();
-        if(!resp.ok){
-          showFeedback(payload.error || 'Server error', 'error');
-        } else {
-          // expected payload: {prediction: 42, details: {prob:0.8}}
-          resultValue.textContent = payload.prediction ?? '—';
-          resultDetails.textContent = payload.details ? JSON.stringify(payload.details) : '';
-          resultBox.style.display='block';
-          showFeedback('Prediction returned successfully', 'success');
-        }
-      } catch(err){
-        showFeedback('Network or server error — ' + err.message, 'error');
-      } finally{
-        spinner.style.display='none';
-        submitBtn.disabled = false;
+      const payload = await resp.json();
+      if(!resp.ok){
+        showFeedback(payload.error || 'Server error', 'error');
+      } else {
+        // expected payload: {prediction: "something", details: {...}}
+        resultValue.textContent = payload.prediction ?? '—';
+        resultDetails.textContent = payload.details ? JSON.stringify(payload.details) : '';
+        resultBox.style.display='block';
+        showFeedback('Prediction returned successfully', 'success');
       }
-    });
-
-    function showFeedback(msg, type){
-      feedback.style.display='block';
-      feedback.textContent = msg;
-      feedback.className = type === 'error' ? 'error fullwidth' : 'success fullwidth';
+    } catch(err){
+      showFeedback('Network or server error — ' + err.message, 'error');
+    } finally{
+      spinner.style.display='none';
+      submitBtn.disabled = false;
     }
-  </script>
+  });
+
+  function showFeedback(msg, type){
+    feedback.style.display='block';
+    feedback.textContent = msg;
+    feedback.className = type === 'error' ? 'error fullwidth' : 'success fullwidth';
+  }
+</script>
+
 </body>
 </html>

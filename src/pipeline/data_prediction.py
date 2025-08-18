@@ -19,8 +19,8 @@ class PredictionPipeline:
         prediction_prob=np.round(prediction_prob,4)
         
         if prediction==0:
-            return "No Claims with probability {}".format(prediction_prob)
+            return "No Claims will occur ,with probability {}".format(prediction_prob)
         else:
-            return "With Claims with probability {}".format(prediction_prob)
+            return "A Claims will occur, with probability {}".format(prediction_prob)
         
     
