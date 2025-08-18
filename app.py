@@ -63,7 +63,7 @@ def index():
             return 'something is wrong'
         
     else:
-        return render_template('index.html')        
+        return render_template('results.html')        
        
 
 if __name__=='__main__':

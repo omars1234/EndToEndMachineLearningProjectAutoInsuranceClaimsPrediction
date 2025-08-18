@@ -47,8 +47,11 @@ pip install -r requirements.txt
 
 *to check if the run_pipeline.py file run perfectly*  
 
- --> python app.py  
 * *add data prediction part*  
+
+## *Creating app.py* --> python app.py
+
+## *create Docker file*
 
 
 ## *WorkFlow Visualization*
