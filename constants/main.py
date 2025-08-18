@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 from datetime import date
-from MongoDBConfig.main import *
+#from MongoDBConfig.main import *
 
 
 """
@@ -10,10 +10,6 @@ General related constant
 SCHEMA_FILE_PATH = Path(r"schema.yaml")
 SCHEMA_CLAENED_FILE_PATH = Path(r"cleaned_schema.yaml")
 
-
-DB_NAME= DB_NAME
-COLLECTION_NAME=COLLECTION_NAME
-CONNECTION_URL=CONNECTION_URL
 
 
 """

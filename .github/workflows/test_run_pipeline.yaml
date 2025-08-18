@@ -28,14 +28,14 @@ jobs:
           pip install -r requirements.txt  
 
       - name: read DB_NAME
-        run: echo "My DB_NAME is ${{secrets.DB_NAME}}"   
+        run: echo "My DB_NAME is ${{secrets.DB_NAME}}" >> .env   
 
       - name: read COLLECTION_NAME
-        run: echo "My COLLECTION_NAME is ${{secrets.COLLECTION_NAME}}" 
+        run: echo "My COLLECTION_NAME is ${{secrets.COLLECTION_NAME}}" >> .env  
 
 
       - name: read CONNECTION_URL
-        run: echo "My CONNECTION_URL is ${{secrets.CONNECTION_URL}}"        
+        run: echo "My CONNECTION_URL is ${{secrets.CONNECTION_URL}}" >> .env         
 
 
       - name: Test with pytest

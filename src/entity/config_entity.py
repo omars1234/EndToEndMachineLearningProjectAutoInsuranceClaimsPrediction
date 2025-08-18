@@ -7,8 +7,11 @@ import os
 from dataclasses import dataclass
 from datetime import datetime
 from constants.main import *
-from MongoDBConfig.main import *
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv() 
 
 
 
@@ -25,9 +28,9 @@ training_pipeline_config: TrainingPipelineConfig = TrainingPipelineConfig()
 @dataclass
 class DataIngestionConfig:
 
-    DB_NAME :Path=DB_NAME
-    COLLECTION_NAME:str=COLLECTION_NAME
-    CONNECTION_URL:str=CONNECTION_URL
+    DB_NAME :Path=os.getenv("DB_NAME")
+    COLLECTION_NAME:str=os.getenv("COLLECTION_NAME")
+    CONNECTION_URL:str=os.getenv("CONNECTION_URL")
     data_artifacts_dir:str=ARTIFACT_DIR
     data_ingested_dir:str=os.path.join(training_pipeline_config.artifact_dir,DATA_INGESTED_DIR_NAME)
 
