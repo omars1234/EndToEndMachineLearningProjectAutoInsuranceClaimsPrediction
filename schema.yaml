@@ -29,6 +29,7 @@ categorical_columns:
 
 cols_to_drop:
   - X_OBSTAT_
+  - numclaims
 
 col_veh_value_validate:
   - veh_value

@@ -29,7 +29,6 @@ def index():
 
             Veh_value = float(data['Veh_value'])
             Exposure = float(data['Exposure'])
-            Number_of_recorded_claims = int(data['Number_of_recorded_claims'])
             Claims_cost = float(data['Claims_cost'])
             Veh_body = str(data['Veh_body'])
             Veh_age = int(data['Veh_age'])
@@ -41,7 +40,6 @@ def index():
             input_data = pd.DataFrame({
                                         "Veh_value": [Veh_value],
                                         "Exposure": [Exposure],
-                                        "Number_of_recorded_claims": [Number_of_recorded_claims],
                                         "Claims_cost": [Claims_cost],
                                         "Veh_body": [Veh_body],
                                         "Veh_age": [Veh_age],

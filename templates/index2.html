@@ -99,20 +99,6 @@ This file posts JSON to /predict via fetch — adapt the endpoint to your Flask 
           <div class="small">Allow decimals </div>
         </div>
 
-
-        <div class="field">
-          <label for="Number_of_recorded_claims"> Number_of_recorded_claims:</label>
-          <select name="Number_of_recorded_claims" id="Number_of_recorded_claims">
-            <option selected="">Number of recorded claims</option>
-             <option value=0>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                        </select>    
-          <div class="small">Categorical — will be one-hot / encoded server-side.</div>
-        </div>
-
         <div class="field">
           <label for="Claims_cost"> Claims cost:</label>
           <input type="text" name="Claims_cost" id="Claims_cost" class="input-text" placeholder="Claims_cost" required>

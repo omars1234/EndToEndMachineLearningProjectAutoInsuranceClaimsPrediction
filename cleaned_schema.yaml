@@ -2,7 +2,6 @@ columns:
   - Veh_value : float
   - Exposure : float
   - Claim_recorded : int
-  - Number_of_recorded_claims : int
   - Claims_cost : float
   - Veh_body : category
   - Veh_age : int
@@ -14,7 +13,6 @@ columns:
 numerical_columns:
   - Veh_value 
   - Exposure 
-  - Number_of_recorded_claims 
   - Claims_cost
   - Claim_recorded
   - Veh_age
@@ -27,7 +25,6 @@ categorical_columns:
 
 
 oh_columns:
-  - Number_of_recorded_claims
   - Veh_body
   - Veh_age
   - Gender

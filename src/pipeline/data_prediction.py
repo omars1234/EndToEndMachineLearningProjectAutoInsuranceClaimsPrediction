@@ -16,11 +16,14 @@ class PredictionPipeline:
         preprocessed_data=self.preprocessor.transform(input_data)
         prediction=self.model.predict(preprocessed_data)
         prediction_prob=self.model.predict_proba(preprocessed_data)
-        prediction_prob=np.round(prediction_prob,4)
+        prediction_prob=np.round(prediction_prob,2)
+
+
+
         
         if prediction==0:
-            return "No Claims will occur ,with probability {}".format(prediction_prob)
+            return "No Claims will occur ,with probability {}".format(prediction_prob[:,0])
         else:
-            return "A Claims will occur, with probability {}".format(prediction_prob)
+            return "A Claims will occur, with probability {}".format(prediction_prob[:,1])
         
     

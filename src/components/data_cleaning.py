@@ -28,7 +28,7 @@ class DataCleaning:
         df=df[df["veh_value"] != 0]
         df["veh_value"]=df["veh_value"]*10000
         df=df.rename(columns={'clm': 'Claim_recorded',
-                            'numclaims': 'number_of_Recorded_claims',
+                            #'numclaims': 'number_of_Recorded_claims',
                             'claimcst0':'Claims_cost',
                             'agecat':'age_category'
                             })
